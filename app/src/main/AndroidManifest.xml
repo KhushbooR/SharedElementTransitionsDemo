@@ -2,6 +2,8 @@
 <manifest package="com.khushbooraheja.sharedelementtransitions_demo"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+  <uses-permission android:name="android.permission.INTERNET"/>
+
   <application
       android:allowBackup="true"
       android:icon="@mipmap/ic_launcher"
@@ -23,6 +25,10 @@
     <activity android:name=".viewpager_to_activity.SourceViewPagerActivity">
     </activity>
     <activity android:name=".grid__frag_to_activity.SourceGridFragmentActivity">
+    </activity>
+    <activity android:name=".method_b_for_grid_frag_to_activity.BaseActivity">
+    </activity>
+    <activity android:name=".method_b_for_grid_frag_to_activity.TargetActivity">
     </activity>
   </application>
 

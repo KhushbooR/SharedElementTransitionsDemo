@@ -14,7 +14,7 @@ import com.khushbooraheja.sharedelementtransitions_demo.databinding.ActivitySour
 import com.khushbooraheja.sharedelementtransitions_demo.utils.Constants;
 import com.khushbooraheja.sharedelementtransitions_demo.utils.IntentUtils;
 
-public class SourceGridActivity extends AppCompatActivity implements SourceGridAcitvityView {
+public class SourceGridActivity extends AppCompatActivity implements SourceGridActivityView {
 
   ActivitySourceGridBinding gridBinding;
 

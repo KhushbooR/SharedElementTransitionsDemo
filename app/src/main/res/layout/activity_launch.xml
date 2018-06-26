@@ -32,6 +32,12 @@
           android:layout_height="wrap_content"
           android:text="View Pager to Activity"
       />
+      <Button
+          android:id="@+id/btn_grid_frag_to_activity_method_b"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Grid Fragment to Activity- method B"
+      />
     </LinearLayout>
 
   </ScrollView>

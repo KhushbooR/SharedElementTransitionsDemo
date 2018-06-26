@@ -17,12 +17,12 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder>{
   private GridItemForGridToActivityBinding itemBinding;
   private Context context;
   private LayoutInflater mInflater;
-  private SourceGridAcitvityView gridAcitvityView;
+  private SourceGridActivityView gridActivityView;
 
-  public GridAdapter(Context context, SourceGridAcitvityView gridAcitvityView) {
+  public GridAdapter(Context context, SourceGridActivityView gridActivityView) {
     mInflater = LayoutInflater.from(context);
     this.context = context;
-    this.gridAcitvityView = gridAcitvityView;
+    this.gridActivityView = gridActivityView;
   }
 
   @Override
@@ -38,7 +38,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder>{
           ViewHolder holder, int position) {
     ViewCompat.setTransitionName(holder.imageView, Constants.TRANSITION_NAME_IMAGE_TO_ACTIVITY);
     holder.imageView.setOnClickListener(v ->
-        gridAcitvityView.onGridItemClick(holder.imageView));
+        gridActivityView.onGridItemClick(holder.imageView));
   }
 
   @Override

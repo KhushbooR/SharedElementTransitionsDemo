@@ -27,5 +27,8 @@ public class LaunchActivity extends AppCompatActivity {
     launchBinding.btnViewPagerToActivity
         .setOnClickListener(v ->
             startActivity(IntentUtils.getSourceViewPagerActivityIntent(this)));
+    launchBinding.btnGridFragToActivityMethodB
+        .setOnClickListener(v ->
+            startActivity(IntentUtils.getBaseActivityIntentForMethodB(this)));
   }
 }

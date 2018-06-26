@@ -1,4 +1,4 @@
-package com.khushbooraheja.sharedelementtransitions_demo.grid__frag_to_activity;
+package com.khushbooraheja.sharedelementtransitions_demo.method_b_for_grid_frag_to_activity.util;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -13,22 +13,20 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.khushbooraheja.sharedelementtransitions_demo.R;
 import com.khushbooraheja.sharedelementtransitions_demo.databinding.ActivitySourceGridBinding;
-import com.khushbooraheja.sharedelementtransitions_demo.grid_to_activity.GridAdapter;
-import com.khushbooraheja.sharedelementtransitions_demo.grid_to_activity.SourceGridActivityView;
 
-public class FragmentClassForGrid extends Fragment implements SourceGridActivityView {
+public class FragmentBaseClassForGrid extends Fragment implements FragmentCallBack {
 
   ActivitySourceGridBinding gridBinding;
-  SourceGridFragActivityView activityView;
+  BaseActivityView activityView;
 
-  public static FragmentClassForGrid newInstance(SourceGridFragActivityView activityView) {
-    FragmentClassForGrid frag = new FragmentClassForGrid();
+  public static FragmentBaseClassForGrid newInstance(BaseActivityView activityView) {
+    FragmentBaseClassForGrid frag = new FragmentBaseClassForGrid();
     frag.dLog("=newInstance==");
     frag.setActivityView(activityView);
     return frag;
   }
 
-  public void setActivityView(SourceGridFragActivityView activityView) {
+  public void setActivityView(BaseActivityView activityView) {
     this.activityView = activityView;
   }
 
@@ -56,12 +54,12 @@ public class FragmentClassForGrid extends Fragment implements SourceGridActivity
 
   private void initializeGridView() {
     gridBinding.gridView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
-    gridBinding.gridView.setAdapter(new GridAdapter(getActivity(), this));
+    gridBinding.gridView.setAdapter(new FragmentGridAdapter(getActivity(), this));
   }
 
   @Override
   public void onGridItemClick(ImageView sharedImageView) {
-    activityView.gridItemOnFragmentClicked(sharedImageView);
+    activityView.onGridItemClick(sharedImageView);
   }
 
   private void dLog(String message) {
